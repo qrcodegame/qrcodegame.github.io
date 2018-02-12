@@ -31,7 +31,6 @@
     var canvas = document.createElement("canvas");
     canvas.id = "canvas";
     document.body.appendChild(canvas);
-
     var img = new Image(width,((640 / 400) * width));   
     img.src = 'image.png';
     img.onload = function() {
@@ -43,6 +42,7 @@
       ctx.font= 20/400 * this.width + 'px microsoft yahei';
       ctx.fillStyle = "rgba(255,255,0,0.5)";
       ctx.fillText(name,(230 / 400) * this.width,(140/640)*this.height );
+      img.src = canvas.toDataURL("image/png");
     };
   }
 </script>
