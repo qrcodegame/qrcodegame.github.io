@@ -24,20 +24,31 @@
         <button type="button" class="btn btn-primary" onclick="init()">点击测试</button>
       </div>
   </div>
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- 扫码底部广告 -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-9540087096615057"
+       data-ad-slot="2398558510"
+       data-ad-format="auto"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 </body>
 <script type="text/javascript">
   function init(){
     var name = document.getElementById("name").value;
     if(!name || name == "" || name == undefined) return;
-    var loading = document.getElementById("loading");
-    document.getElementById("input_name").style.display = "none";
     var width = document.body.clientWidth;
-    loading.style.display = "block";
     var canvas = document.createElement("canvas");
     canvas.id = "canvas";
     document.body.appendChild(canvas);
     var img = new Image(width,((640 / 400) * width));   
     img.src = 'image.png';
+    var loading = document.getElementById("loading");
+    loading.style.display = "block";
+    document.getElementById("input_name").style.display = "none";
     img.onload = function() {
       var canvas = document.getElementById('canvas');
       var ctx = canvas.getContext('2d');
@@ -54,14 +65,4 @@
       document.body.appendChild(img);
     };
   }
-</script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 扫码底部广告 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9540087096615057"
-     data-ad-slot="2398558510"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
