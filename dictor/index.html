@@ -8,15 +8,17 @@
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/spinner.css">
 </head>
 <body>
-  <div id='wx_pic' style='margin:0 auto;display:none;'>
-    <img src='../favicon.png' />
+  <div class="spinner" id="loading" style="display: none">
+    <div class="double-bounce1"></div>
+    <div class="double-bounce2"></div>
   </div>
   <div class="container" id="input_name">
       <div class="row text-center main" style="padding: 15px;">
         <div class="form-group" style="width: 100%">
-          <label for="exampleFormControlInput1">输入姓名测试</label>
+          <label for="exampleFormControlInput1">输入姓名，点击测试，就能诊断出你的病症。</label>
           <input type="email" class="form-control" id="name" placeholder="狗剩">
         </div>
         <button type="button" class="btn btn-primary" onclick="init()">点击测试</button>
@@ -25,9 +27,12 @@
 </body>
 <script type="text/javascript">
   function init(){
+    var name = document.getElementById("name").value;
+    if(!name || name == "" || name == undefined) return;
+    var loading = document.getElementById("loading");
     var width = document.body.clientWidth;
-    var name = document.getElementById("name").value; 
     document.body.innerHTML = "";
+    loading.style.display = "block";
     var canvas = document.createElement("canvas");
     canvas.id = "canvas";
     document.body.appendChild(canvas);
@@ -43,6 +48,8 @@
       ctx.fillStyle = "rgba(255,255,0,0.5)";
       ctx.fillText(name,(230 / 400) * this.width,(140/640)*this.height );
       img.src = canvas.toDataURL("image/png");
+      canvas.parentNode.removeChild(canvas);
+      document.body.appendChild(img);
     };
   }
 </script>
