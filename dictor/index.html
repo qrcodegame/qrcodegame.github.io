@@ -30,8 +30,8 @@
     var name = document.getElementById("name").value;
     if(!name || name == "" || name == undefined) return;
     var loading = document.getElementById("loading");
+    document.getElementById("input_name").style.display = "none";
     var width = document.body.clientWidth;
-    document.body.innerHTML = "";
     loading.style.display = "block";
     var canvas = document.createElement("canvas");
     canvas.id = "canvas";
@@ -48,6 +48,8 @@
       ctx.fillStyle = "rgba(255,255,0,0.5)";
       ctx.fillText(name,(230 / 400) * this.width,(140/640)*this.height );
       img.src = canvas.toDataURL("image/png");
+      var loading = document.getElementById("loading");
+      loading.style.display = "none";
       canvas.parentNode.removeChild(canvas);
       document.body.appendChild(img);
     };
