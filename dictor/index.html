@@ -11,21 +11,8 @@
     <link rel="stylesheet" type="text/css" href="../css/spinner.css">
 </head>
 <body>
-  <div class="spinner" id="loading" style="display: none">
-    <div class="double-bounce1"></div>
-    <div class="double-bounce2"></div>
-  </div>
-  <div class="container" id="input_name">
-      <div class="row text-center main" style="padding: 15px;">
-        <div class="form-group" style="width: 100%">
-          <label for="exampleFormControlInput1">输入姓名，点击测试，就能诊断出你的病症。</label>
-          <input type="email" class="form-control" id="name" placeholder="狗剩">
-        </div>
-        <button type="button" class="btn btn-primary" onclick="init()">点击测试</button>
-      </div>
-  </div>
-
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <div style="width: 100%;height: 100;position: fixed;">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!-- 扫码底部广告 -->
   <ins class="adsbygoogle"
        style="display:block;"
@@ -35,6 +22,20 @@
   <script>
   (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
+  </div>
+  <div class="spinner" id="loading" style="display: none">
+    <div class="double-bounce1"></div>
+    <div class="double-bounce2"></div>
+  </div>
+  <div class="container" id="input_name" style="margin-top: 100px;">
+      <div class="row text-center main" style="padding: 15px;">
+        <div class="form-group" style="width: 100%">
+          <label for="exampleFormControlInput1">输入姓名，点击测试，就能诊断出你的病症。</label>
+          <input type="email" class="form-control" id="name" placeholder="狗剩">
+        </div>
+        <button type="button" class="btn btn-primary" onclick="init()">点击测试</button>
+      </div>
+  </div>
 </body>
 <script type="text/javascript">
   function init(){
