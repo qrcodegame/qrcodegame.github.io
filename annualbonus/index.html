@@ -30,10 +30,11 @@
   <div class="container" id="input_name">
       <div class="row text-center main" style="padding: 15px;">
         <div class="form-group" style="width: 100%">
-          <label for="exampleFormControlInput1">输入姓名，点击测试，就能诊断出你的病症。</label>
-          <input type="email" class="form-control" id="name" placeholder="狗剩">
+          <label for="exampleFormControlInput1">输入公司名称，快速生成属于自己的年终奖。</label>
+          <input type="email" class="form-control" id="name" placeholder="输入公司名称">
         </div>
-        <button type="button" class="btn btn-primary" onclick="init()">点击测试</button>
+        <button type="button" class="btn btn-primary" onclick="init()">点击生成</button>
+        <a class="btn btn-success" style="margin-left: 20px;" href="/">更多测试</a>
       </div>
   </div>
 </body>
@@ -46,7 +47,7 @@
     canvas.id = "canvas";
     document.body.appendChild(canvas);
     var img = new Image(width,((640 / 400) * width));   
-    img.src = 'image.png';
+    img.src = 'image.jpg';
     var loading = document.getElementById("loading");
     loading.style.display = "block";
     document.getElementById("input_name").style.display = "none";
@@ -57,8 +58,8 @@
       canvas.height = this.height;
       ctx.drawImage(this, 0, 0, this.width, this.height);
       ctx.font= 20/400 * this.width + 'px microsoft yahei';
-      ctx.fillStyle = "rgba(255,255,0,0.5)";
-      ctx.fillText(name,(230 / 400) * this.width,(140/640)*this.height );
+      ctx.fillStyle = "rgba(103, 103, 103, 1)";
+      ctx.fillText(name,(52 / 478) * this.width,(75/683)*this.height );
       img.src = canvas.toDataURL("image/png");
       var loading = document.getElementById("loading");
       loading.style.display = "none";
