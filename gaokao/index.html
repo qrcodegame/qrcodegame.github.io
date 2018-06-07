@@ -77,11 +77,11 @@
       canvas.width = this.width;
       canvas.height = this.height;
       ctx.drawImage(this, 0, 0, this.width, this.height);
-      ctx.font= 20/400 * this.width + 'px microsoft yahei';
+      ctx.font= 18/400 * this.width + 'px microsoft yahei';
       ctx.fillStyle = "rgba(26, 26, 26, 1)";
-      ctx.fillText(name,(403 / 799) * this.width, (418/1071)*this.height );
-      ctx.fillText(gender,(642 / 799) * this.width, (418/1071)*this.height );
-      ctx.fillText(school,(403 / 799) * this.width, (487/1071)*this.height );
+      ctx.fillText(name,(403 / 799) * this.width, (417/1071)*this.height );
+      ctx.fillText(gender,(642 / 799) * this.width, (417/1071)*this.height );
+      ctx.fillText(school,(403 / 799) * this.width, (486/1071)*this.height );
       img.src = canvas.toDataURL("image/jpeg");
       var loading = document.getElementById("loading");
       loading.style.display = "none";
